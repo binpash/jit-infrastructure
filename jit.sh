@@ -20,7 +20,7 @@ export RUNTIME_DIR="${RUNTIME_DIR:-$PASH_TOP/runtime}"
 export RUNTIME_LIBRARY_DIR="${RUNTIME_LIBRARY_DIR:-$PASH_TOP/runtime/}"
 
 ## Initialize logging functions
-source "$RUNTIME_DIR/jit_runtime_init.sh"
+# source "$RUNTIME_DIR/jit_runtime_init.sh"
 
 ##
 ## (1) Save shell state

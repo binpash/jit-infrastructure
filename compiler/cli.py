@@ -10,17 +10,11 @@ class BaseParser(argparse.ArgumentParser):
     Other flags are available by classes which inherit BaseParser
     """
 
-    @staticmethod
-    def _get_width():
-        cpus = os.cpu_count()
-        assert cpus is not None
-        return cpus // 8 if cpus >= 16 else 2
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.add_argument(
             "-t",
-            "--output_time",  # FIXME: --time
+            "--time",  # FIXME: --time
             help="(obsolete, time is always logged now) output the time it took for every step",
             action="store_true",
         )
