@@ -98,8 +98,5 @@ export -f __jit_redir_output
 export -f __jit_redir_all_output
 export -f __jit_redir_all_output_always_execute
 
-
-export PASH_BASH_VERSION="${BASH_VERSINFO[@]:0:3}"
-
 umask "$old_umask"
-PASH_FROM_SH="pa.sh" python3 -S "$PASH_TOP/compiler/pash.py" "$@"
+PASH_FROM_SH="sh-instrument.sh" python3 -S "$PASH_TOP/preprocessor/preprocess.py" "$@"

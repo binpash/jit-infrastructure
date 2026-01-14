@@ -103,25 +103,3 @@ class RunnerParser(BaseParser):
         )
 
         self.set_defaults(preprocess_mode="pash")
-
-
-class PreprocessorParser(BaseParser):
-    """
-    Parser for the preprocessor in compiler/preprocessor/preprocessor.py
-    Generates two subparsers
-    """
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        subparser = self.add_subparsers(help="sub-command help")
-        self.add_pash_subparser(subparser)
-
-    @staticmethod
-    def add_pash_subparser(subparser):
-        parser_pash = subparser.add_parser(
-            "pash", help="Preprocess the script so that it can be run with PaSh"
-        )
-        parser_pash.add_pash_args()
-        parser_pash.add_argument("input", help="the script to be preprocessed")
-        parser_pash.set_defaults(preprocess_mode="pash")
-

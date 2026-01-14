@@ -31,9 +31,6 @@ else:
 PYTHON_VERSION = "python3"
 RUNTIME_EXECUTABLE = os.path.join(PASH_TOP, "jit.sh")
 
-BASH_VERSION = tuple(int(i) for i in os.getenv("PASH_BASH_VERSION").split(" "))
-
-
 ##
 ## Global configuration used by all pash components
 ##
