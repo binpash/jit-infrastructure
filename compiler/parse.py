@@ -4,16 +4,13 @@ import subprocess
 import sys
 
 from ast_util import UnparsedScript
-from shasta.ast_node import ast_node_to_untyped_deep
 from shasta.json_to_ast import to_ast_node
-from shasta.ast_node import string_of_arg
 from shasta.bash_to_shasta_ast import to_ast_node as bash_to_shasta_ast
 
 from config import log
 
 import libdash.parser
 import libbash
-
 
 ## Parses straight a shell script to an AST
 ## through python without calling it as an executable
@@ -104,8 +101,3 @@ def from_ast_objects_to_shell_file(asts, new_shell_filename):
     script = from_ast_objects_to_shell(asts)
     with open(new_shell_filename, "w", encoding="utf-8") as new_shell_file:
         new_shell_file.write(script)
-
-
-## Simply wraps the string_of_arg
-def pash_string_of_arg(arg, quoted=False):
-    return string_of_arg(arg, quoted)

@@ -31,10 +31,6 @@ else:
 PYTHON_VERSION = "python3"
 RUNTIME_EXECUTABLE = os.path.join(PASH_TOP, "jit.sh")
 
-## Ensure that PASH_TMP_PREFIX is set by pa.sh
-assert not os.getenv("PASH_TMP_PREFIX") is None
-PASH_TMP_PREFIX = os.getenv("PASH_TMP_PREFIX")
-
 BASH_VERSION = tuple(int(i) for i in os.getenv("PASH_BASH_VERSION").split(" "))
 
 
@@ -98,13 +94,6 @@ def unzip(lst):
     res = [[i for i, j in lst], [j for i, j in lst]]
     return res
 
-
-def pad(lst, index):
-    if index >= len(lst):
-        lst += [None] * (index + 1 - len(lst))
-    return lst
-
-
 def print_time_delta(prefix, start_time, end_time):
     ## Always output time in the log.
     time_difference = (end_time - start_time) / timedelta(milliseconds=1)
@@ -113,7 +102,6 @@ def print_time_delta(prefix, start_time, end_time):
         log("{} time:".format(prefix), time_difference, " ms", level=0)
     else:
         log("{} time:".format(prefix), time_difference, " ms")
-
 
 ## This function decorates a function to add the logging prefix (without missing the old prefix)
 def logging_prefix(prefix):
@@ -143,7 +131,7 @@ def log(*args, end="\n", level=1):
 
 
 def ptempfile():
-    fd, name = tempfile.mkstemp(dir=PASH_TMP_PREFIX)
+    fd, name = tempfile.mkstemp()
     ## TODO: Get a name without opening the fd too if possible
     os.close(fd)
     return name

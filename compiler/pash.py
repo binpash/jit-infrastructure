@@ -5,8 +5,7 @@ from datetime import datetime
 
 import config
 from config import log, ptempfile, logging_prefix, print_time_delta
-from cli import RunnerParser, PreprocessorParser
-# import ast_to_ast
+from cli import RunnerParser
 import preprocess_ast_cases
 from parse import parse_shell_to_asts, from_ast_objects_to_shell
 from ast_util import string_to_argument, make_command
@@ -70,8 +69,8 @@ def main():
     ## If it is interactive we need a different execution mode
     ##
     ## The user can also ask for an interactive mode irregardless of whether pash was invoked in interactive mode.
-    if len(args.input) == 0 or args.interactive:
-        log("ERROR: --interactive option is not supported!", level=0)
+    if len(args.input) == 0:
+        log("ERROR: interactive mode is not supported!", level=0)
         assert False
     else:
         input_script_path = args.input[0]
@@ -194,14 +193,6 @@ def parse_args():
 
     return args, shell_name
 
-
-def shell_env(shell_name: str):
-    new_env = os.environ.copy()
-    new_env["PASH_TMP_PREFIX"] = config.PASH_TMP_PREFIX
-    new_env["pash_shell_name"] = shell_name
-    return new_env
-
-
 ## The following two functions need to correspond completely
 def bash_prefix_args():
     subprocess_args = ["/usr/bin/env", "bash"]
@@ -229,21 +220,17 @@ def bash_exec_string(shell_name):
 
 
 def execute_script(compiled_script_filename, command, arguments, shell_name):
-    new_env = shell_env(shell_name)
     subprocess_args = bash_prefix_args()
     subprocess_args += [
         "-c",
         "source {}".format(compiled_script_filename),
         shell_name,
     ] + arguments
-    # subprocess_args = ["/usr/bin/env", "bash", compiled_script_filename] + arguments
     log(
         "Executing:",
-        "PASH_TMP_PREFIX={} pash_shell_name={} {}".format(
-            config.PASH_TMP_PREFIX, shell_name, " ".join(subprocess_args)
-        ),
+        " ".join(subprocess_args)
     )
-    exec_obj = subprocess.run(subprocess_args, env=new_env, close_fds=False)
+    exec_obj = subprocess.run(subprocess_args, close_fds=False)
     return exec_obj.returncode
 
 
