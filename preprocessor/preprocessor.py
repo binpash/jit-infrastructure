@@ -7,15 +7,32 @@ a preprocessed version. It does NOT execute the script.
 """
 
 import sys
+import os
 import argparse
-from datetime import datetime
+from datetime import datetime, timedelta
+import logging
 
-import config
-from config import log, print_time_delta
 import preprocess_ast_cases
 from parse import parse_shell_to_asts, from_ast_objects_to_shell
 from util import string_to_argument, make_command
 from shasta.json_to_ast import to_ast_node
+
+
+# Global state for runtime executable path
+RUNTIME_EXECUTABLE = None
+
+
+def log(*args, level=1):
+    """Simple logging function"""
+    if level >= 1:
+        message = " ".join([str(a) for a in args])
+        logging.info(f"PaSh: {message}")
+
+
+def print_time_delta(prefix, start_time, end_time):
+    """Print time difference between two datetime objects"""
+    time_difference = (end_time - start_time) / timedelta(milliseconds=1)
+    log("{} time:".format(prefix), time_difference, " ms")
 
 
 class TransformationState:
@@ -60,7 +77,7 @@ class TransformationState:
 
         arguments = [
             string_to_argument("source"),
-            string_to_argument(config.RUNTIME_EXECUTABLE),
+            string_to_argument(RUNTIME_EXECUTABLE),
         ]
         runtime_node = make_command(arguments, assignments=assignments)
 
@@ -129,6 +146,12 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--runtime-executable",
+        required=True,
+        help="Path to the PaSh runtime executable (jit.sh)"
+    )
+
+    parser.add_argument(
         "--bash",
         action="store_true",
         default=False,
@@ -143,41 +166,29 @@ def parse_args():
         help="Configure debug level; defaults to 0"
     )
 
-    parser.add_argument(
-        "--log_file",
-        default="",
-        help="Configure where to write the log; defaults to stderr"
-    )
-
     return parser.parse_args()
 
 
 def main():
     """Main entry point for the preprocessor"""
+    global RUNTIME_EXECUTABLE
+
     args = parse_args()
 
-    # Initialize config with parsed arguments
-    # Create a minimal mock args object for config initialization
-    class MockArgs:
-        def __init__(self, debug, log_file, bash):
-            self.debug = debug
-            self.log_file = log_file
-            self.bash = bash
-            self.preprocess_only = True  # Preprocessor only transforms
-            self.output_preprocessed = False
-            self.command = None
-            self.input = [args.input_script]
-            self.a = False
-            self.v = False
-            self.x = False
+    # Initialize logging
+    logging.basicConfig(format="%(message)s")
+    if args.debug == 1:
+        logging.getLogger().setLevel(logging.INFO)
+    elif args.debug >= 2:
+        logging.getLogger().setLevel(logging.DEBUG)
 
-    mock_args = MockArgs(args.debug, args.log_file, args.bash)
-    config.set_config_globals_from_pash_args(mock_args)
-    config.init_log_file()
+    # Set runtime executable path
+    RUNTIME_EXECUTABLE = args.runtime_executable
 
     log("Preprocessor starting...")
     log(f"Input script: {args.input_script}")
     log(f"Output file: {args.output}")
+    log(f"Runtime executable: {args.runtime_executable}")
     log(f"Bash mode: {args.bash}")
     log("-" * 40)
 

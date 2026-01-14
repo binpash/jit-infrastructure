@@ -199,6 +199,7 @@ __jit_redir_all_output echo "PaSh: Calling preprocessor..."
 "$PYTHON_VENV" "$PASH_TOP/preprocessor/preprocessor.py" \
     "$input_script" \
     --output "$preprocessed_output" \
+    --runtime-executable "$PASH_TOP/jit.sh" \
     --debug "$PASH_DEBUG_LEVEL" \
     $bash_flag
 
@@ -219,7 +220,7 @@ fi
 
 # Step 2: Call runner.py to execute the preprocessed script
 __jit_redir_all_output echo "PaSh: Calling runner..."
-"$PYTHON_VENV" "$PASH_TOP/preprocessor/runner.py" \
+"$PYTHON_VENV" "$PASH_TOP/runner.py" \
     "$preprocessed_output" \
     "$shell_name" \
     "${script_args[@]}" \

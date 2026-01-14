@@ -11,7 +11,6 @@ import subprocess
 import argparse
 import logging
 
-
 # Global state for bash flags
 class BashFlags:
     def __init__(self, allexport=False, verbose=False, xtrace=False):
