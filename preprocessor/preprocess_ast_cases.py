@@ -277,7 +277,6 @@ def preprocess_node_semi(
     trans_options,
     last_object: bool = False,
 ):
-    # preprocessed_left, should_replace_whole_ast, is_non_maximal = preprocess_node(ast_node.left, irFileGen, config)
     ##
     ## TODO: Is it valid that only the right one is considered the last command?
     preprocessed_left, sth_replaced_left = preprocess_close_node(
@@ -306,7 +305,6 @@ def preprocess_node_and(
     trans_options,
     last_object: bool = False,
 ):
-    # preprocessed_left, should_replace_whole_ast, is_non_maximal = preprocess_node(ast_node.left, irFileGen, config)
     preprocessed_left, sth_replaced_left = preprocess_close_node(
         ast_node.left_operand, trans_options, last_object=last_object
     )
@@ -331,7 +329,6 @@ def preprocess_node_or(
     trans_options,
     last_object: bool = False,
 ):
-    # preprocessed_left, should_replace_whole_ast, is_non_maximal = preprocess_node(ast_node.left, irFileGen, config)
     preprocessed_left, sth_replaced_left = preprocess_close_node(
         ast_node.left_operand, trans_options, last_object=last_object
     )
@@ -376,7 +373,6 @@ def preprocess_node_if(
     trans_options,
     last_object: bool = False,
 ):
-    # preprocessed_left, should_replace_whole_ast, is_non_maximal = preprocess_node(ast_node.left, irFileGen, config)
     preprocessed_cond, sth_replaced_cond = preprocess_close_node(
         ast_node.cond, trans_options, last_object=last_object
     )

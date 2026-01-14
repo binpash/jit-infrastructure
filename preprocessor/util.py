@@ -1,3 +1,4 @@
+import logging
 import os
 import tempfile
 
@@ -90,3 +91,12 @@ def ptempfile():
 def unzip(lst):
     res = [[i for i, j in lst], [j for i, j in lst]]
     return res
+
+def log(*args, end="\n", level=1):
+    ## If the debug logging level is at least
+    ## as high as this log message.
+    ## TODO: Allow all levels
+    if level >= 1:
+        concatted_args = " ".join([str(a) for a in list(args)])
+        logging.info(f"{LOGGING_PREFIX} {concatted_args}")
+
