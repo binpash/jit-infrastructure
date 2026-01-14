@@ -1,3 +1,6 @@
+import os
+import tempfile
+
 from shasta.ast_node import *
 from shasta.json_to_ast import *
 
@@ -77,3 +80,13 @@ def make_nop():
 
 def make_kv(key, val):
     return [key, val]
+
+def ptempfile():
+    fd, name = tempfile.mkstemp()
+    ## TODO: Get a name without opening the fd too if possible
+    os.close(fd)
+    return name
+
+def unzip(lst):
+    res = [[i for i, j in lst], [j for i, j in lst]]
+    return res

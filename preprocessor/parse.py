@@ -3,7 +3,7 @@ import config
 import subprocess
 import sys
 
-from ast_util import UnparsedScript
+from util import UnparsedScript
 from shasta.json_to_ast import to_ast_node
 from shasta.bash_to_shasta_ast import to_ast_node as bash_to_shasta_ast
 

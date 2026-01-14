@@ -6,8 +6,6 @@ export PYTHONPATH="${PASH_TOP}/python_pkgs/:${PYTHONPATH}"
 export RUNTIME_DIR="${RUNTIME_DIR:-$PASH_TOP/runtime}"
 export RUNTIME_LIBRARY_DIR="${RUNTIME_LIBRARY_DIR:-$PASH_TOP/runtime/}"
 
-
-
 trap kill_all SIGTERM SIGINT
 kill_all() {
     kill -s SIGKILL 0

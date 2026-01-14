@@ -1,6 +1,6 @@
 import copy
 
-from ast_util import *
+from util import *
 from shasta.ast_node import AstNode
 
 def preprocess_node(

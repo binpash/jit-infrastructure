@@ -3,16 +3,6 @@
 ## Assumes the following variable is set:
 ## __jit_script_to_execute: the script that was stubbed
 
-## High level design
-##
-## (1) Save shell state (exit code, set status)
-## (2) No compilation - just prepare to execute sequential script
-## (3) Restore shell state before execution
-## (4) Execute the script
-## (5) Save state after execution (for logging)
-## (6) No daemon communication needed
-## (7) Restore final state before exit
-
 ##
 ## (1) Save shell state
 ##

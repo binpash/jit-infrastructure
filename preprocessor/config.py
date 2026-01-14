@@ -5,7 +5,6 @@ import sys
 from datetime import timedelta
 import functools
 from typing import Optional, TypeVar, Union, List, Any
-import tempfile
 
 TType = TypeVar("TType")
 
@@ -82,15 +81,6 @@ def init_log_file():
             pass
 
 
-##
-## Utility functions (merged from util.py)
-##
-
-
-def unzip(lst):
-    res = [[i for i, j in lst], [j for i, j in lst]]
-    return res
-
 def print_time_delta(prefix, start_time, end_time):
     ## Always output time in the log.
     time_difference = (end_time - start_time) / timedelta(milliseconds=1)
@@ -126,10 +116,4 @@ def log(*args, end="\n", level=1):
         concatted_args = " ".join([str(a) for a in list(args)])
         logging.info(f"{LOGGING_PREFIX} {concatted_args}")
 
-
-def ptempfile():
-    fd, name = tempfile.mkstemp()
-    ## TODO: Get a name without opening the fd too if possible
-    os.close(fd)
-    return name
 

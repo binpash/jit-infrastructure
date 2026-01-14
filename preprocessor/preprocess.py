@@ -4,11 +4,11 @@ import subprocess
 from datetime import datetime
 
 import config
-from config import log, ptempfile, logging_prefix, print_time_delta
+from config import log, logging_prefix, print_time_delta
 from cli import RunnerParser
 import preprocess_ast_cases
 from parse import parse_shell_to_asts, from_ast_objects_to_shell
-from ast_util import string_to_argument, make_command
+from util import ptempfile, string_to_argument, make_command
 from shasta.json_to_ast import to_ast_node
 
 LOGGING_PREFIX = "PaSh: "
