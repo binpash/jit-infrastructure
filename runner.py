@@ -2,8 +2,9 @@
 """
 Runner - Executes preprocessed shell scripts.
 
-This is a standalone executable that takes a preprocessed shell script
-and executes it with the appropriate bash flags and arguments.
+This is a standalone executable that runs a shell script as if it was a shell
+
+TODO: Make this a shell script if possible?
 """
 
 import sys

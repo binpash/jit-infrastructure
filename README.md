@@ -3,9 +3,10 @@
 
 A shell script instrumentation engine that can preprocess a script, stub out fragments of it with calls to a JIT engine, and then allows the user to implement any form of analysis or instrumentation at runtime, before the fragment runs.
 
-It includes a [preprocessor](/preprocessor/) and a [just-in-time engine](/jit.sh).
+It includes a [preprocessor](/preprocessor/), a script runner that behaves like a shell, and a [just-in-time engine](/jit.sh).
 
 TODOs:
-- Separate the preprocessor from the runner python script
-- The specific should become its own library
+- Make the runner its own repo and PyPI (or simplify into just a bash call)
+- Make the preprocessor its own repo and PyPI
+- Use these in PaSh too
 - Add CI
