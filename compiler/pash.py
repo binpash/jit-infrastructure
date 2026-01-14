@@ -2,7 +2,8 @@ import sys
 import os
 import subprocess
 
-from ir import *
+# Runtime-only mode: ir.py not needed (only used for compilation)
+# from ir import *
 from pash_graphviz import maybe_init_graphviz_dir
 from preprocessor.preprocessor import preprocess
 from speculative import util_spec

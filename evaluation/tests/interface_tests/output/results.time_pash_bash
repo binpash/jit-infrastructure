@@ -1,53 +1,53 @@
-0.084
-0.081
 0.073
-0.092
-0.072
-0.084
-0.078
-0.079
+0.083
+0.073
+0.066
+0.074
+0.083
+0.088
+0.110
 incomplete-arith.sh: line 3: unexpected EOF while looking for matching `)'
-0.064
-0.081
-0.081
-/tmp/pash_KSeviOV/tmpyjdd6yk7: line 4: var1: readonly variable
-/tmp/pash_KSeviOV/tmpyjdd6yk7: line 6: var2: readonly variable
-/tmp/pash_KSeviOV/tmpfxi70eey: line 1: unset: var1: cannot unset: readonly variable
-/tmp/pash_KSeviOV/tmpcouhic0p: line 1: unset: var2: cannot unset: readonly variable
-0.105
-/tmp/pash_XQRmfa0/tmptv1aqfev: line 4: var1: readonly variable
-/tmp/pash_XQRmfa0/tmptv1aqfev: line 6: var2: readonly variable
-/tmp/pash_XQRmfa0/tmp5dqd4_xh: line 1: unset: var1: cannot unset: readonly variable
-/tmp/pash_XQRmfa0/tmp89oonb_t: line 1: unset: var2: cannot unset: readonly variable
-0.122
+0.070
+0.088
+0.094
+/tmp/pash_mVi1U7V/tmpptukb52n: line 4: var1: readonly variable
+/tmp/pash_mVi1U7V/tmpptukb52n: line 6: var2: readonly variable
+/tmp/pash_mVi1U7V/tmpw0uiiqrt: line 1: unset: var1: cannot unset: readonly variable
+/tmp/pash_mVi1U7V/tmpx6b_mn1q: line 1: unset: var2: cannot unset: readonly variable
+0.111
+/tmp/pash_ZvGAvCr/tmpnug2bipz: line 4: var1: readonly variable
+/tmp/pash_ZvGAvCr/tmpnug2bipz: line 6: var2: readonly variable
+/tmp/pash_ZvGAvCr/tmpdcwa6mg0: line 1: unset: var1: cannot unset: readonly variable
+/tmp/pash_ZvGAvCr/tmpukzio4jl: line 1: unset: var2: cannot unset: readonly variable
+0.121
 0.103
-0.100
+0.091
+0.116
+0.103
+0.254
+0.175
+0.237
+0.108
+0.260
+0.118
+0.106
 0.117
-0.115
-0.301
-0.294
-0.259
-0.170
-0.343
-0.145
-0.140
-0.158
-0.179
-0.145
-0.176
-0.165
-/tmp/pash_FoKXG3r/tmpnvyglc8m: line 1: no.such.file: No such file or directory
-0.148
+0.120
+0.096
+0.116
+0.114
+/tmp/pash_lDZuLPb/tmp5minrj_e: line 1: no.such.file: No such file or directory
+0.100
+0.105
+/tmp/pash_jDIEJgu/tmpbhm4jvku: line 1: foobar: unbound variable
+0.117
+/tmp/pash_TSLOYfR/tmpazqdrc5k: line 1: $1: unbound variable
+0.125
+0.102
+0.122
+0.099
+0.088
+0.156
+0.097
+0.105
 0.128
-/tmp/pash_6UyW59Q/tmp88rdwj4u: line 1: foobar: unbound variable
-0.163
-/tmp/pash_RakbtUt/tmpys3v68jp: line 1: $1: unbound variable
-0.136
-0.138
-0.154
-0.128
-0.130
-0.207
-0.159
-0.147
-0.168
