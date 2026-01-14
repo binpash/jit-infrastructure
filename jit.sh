@@ -3,7 +3,7 @@
 ## Assumes the following variable is set:
 ## __jit_script_to_execute: the script that was stubbed
 
-## High level design (adapted from pash_runtime.sh):
+## High level design
 ##
 ## (1) Save shell state (exit code, set status)
 ## (2) No compilation - just prepare to execute sequential script

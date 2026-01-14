@@ -39,13 +39,67 @@ for ((i=1; i<=$#; i++)); do
     fi
 done
 
-source "$RUNTIME_DIR/jit_runtime_init.sh"
+## TODO: Get it from argument
+export PASH_REDIR="${PASH_REDIR:-&2}"
+
+## `__jit_redir_output` and `__jit_redir_all_output` are strictly for logging.
+## They do not execute their arguments if there is no debugging.
+if [ "$PASH_DEBUG_LEVEL" -eq 0 ]; then
+    __jit_redir_output()
+    {
+        :
+    }
+
+    __jit_redir_all_output()
+    {
+        :
+    }
+
+    __jit_redir_all_output_always_execute()
+    {
+        > /dev/null 2>&1 "$@"
+    }
+
+else
+    if [ "$PASH_REDIR" == '&2' ]; then
+        __jit_redir_output()
+        {
+            >&2 "$@"
+        }
+
+        __jit_redir_all_output()
+        {
+            >&2 "$@"
+        }
+
+        __jit_redir_all_output_always_execute()
+        {
+            >&2 "$@"
+        }
+    else
+        __jit_redir_output()
+        {
+            >>"$PASH_REDIR" "$@"
+        }
+
+        __jit_redir_all_output()
+        {
+            >>"$PASH_REDIR" 2>&1 "$@"
+        }
+
+        __jit_redir_all_output_always_execute()
+        {
+            >>"$PASH_REDIR" 2>&1 "$@"
+        }
+    fi
+fi
+
+export -f __jit_redir_output
+export -f __jit_redir_all_output
+export -f __jit_redir_all_output_always_execute
+
 
 export PASH_BASH_VERSION="${BASH_VERSINFO[@]:0:3}"
 
 umask "$old_umask"
 PASH_FROM_SH="pa.sh" python3 -S "$PASH_TOP/compiler/pash.py" "$@"
-pash_exit_code=$?
-
-
-(exit "$pash_exit_code")
