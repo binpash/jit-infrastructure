@@ -357,7 +357,7 @@ run_test test6
 # run_test test7
 run_test test8
 run_test test9
-# run_test test10 TODO: Fix
+run_test test10
 run_test test11
 run_test test12
 run_test test13

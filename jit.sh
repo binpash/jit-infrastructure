@@ -38,7 +38,27 @@ __jit_redir_output echo "$$: (1) Pre-ec, pre-set, jit-set: ($__jit_previous_exit
 export SCRIPT_TO_EXECUTE="$__jit_script_to_execute"
 ## Clean up JIT-specific environment variables to prevent leakage
 unset __jit_script_to_execute
-source "$RUNTIME_DIR/jit_restore_state_and_execute.sh"
+export __jit_current_set_state=$-
+source "$RUNTIME_DIR/jit_set_from_to.sh" "$__jit_current_set_state" "$__jit_previous_set_status"
+__jit_redir_output echo "$$: (3) Restore (pre-ec,pre-set): ($__jit_previous_exit_status,$-)"
+
+## Execute the script
+__jit_redir_output echo "$$: (4) Will execute script in ${SCRIPT_TO_EXECUTE}:"
+__jit_redir_output cat "${SCRIPT_TO_EXECUTE}"
+
+## Note: We run the `exit` in a checked position so that we don't simply exit when we are in `set -e`.
+if (exit "$__jit_previous_exit_status")
+then 
+{
+    ## This works w.r.t. arguments because source does not change them if there are no arguments
+    ## being given.
+    source "${SCRIPT_TO_EXECUTE}"
+}
+else 
+{
+    source "${SCRIPT_TO_EXECUTE}"
+}
+fi
 
 ## Comment out the rest if you don't want an analysis post execution of the script
 
