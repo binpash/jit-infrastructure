@@ -1,4 +1,3 @@
-import json
 import logging
 import os
 import subprocess
@@ -27,18 +26,10 @@ else:
 PYTHON_VERSION = "python3"
 # Runtime-only mode: use jit.sh instead of pash_runtime.sh
 RUNTIME_EXECUTABLE = os.path.join(PASH_TOP, "jit.sh")
-# No compiler in runtime-only mode
-PLANNER_EXECUTABLE = ""
-SAVE_ARGS_EXECUTABLE = ""
-SAVE_SHELL_STATE_EXECUTABLE = os.path.join(
-    PASH_TOP, "compiler/orchestrator_runtime/save_shell_state.sh"
-)
 
 ## Ensure that PASH_TMP_PREFIX is set by pa.sh
 assert not os.getenv("PASH_TMP_PREFIX") is None
 PASH_TMP_PREFIX = os.getenv("PASH_TMP_PREFIX")
-
-SOCKET_BUF_SIZE = 8192
 
 BASH_VERSION = tuple(int(i) for i in os.getenv("PASH_BASH_VERSION").split(" "))
 
@@ -51,11 +42,6 @@ OUTPUT_TIME = False
 DEBUG_LEVEL = 0
 LOG_FILE = ""
 
-
-HDFS_PREFIX = "$HDFS_DATANODE_DIR/"
-
-
-config = {}
 pash_args = None
 
 
@@ -92,47 +78,8 @@ def set_config_globals_from_pash_args(given_pash_args):
 sys.setrecursionlimit(10000)
 
 
-def load_config(config_file_path=""):
-    global config
-    pash_config = {}
-    CONFIG_KEY = "distr_planner"
-
-    if config_file_path == "":
-        config_file_path = "{}/compiler/config.json".format(PASH_TOP)
-    with open(config_file_path) as config_file:
-        pash_config = json.load(config_file)
-
-    if not pash_config:
-        raise Exception(
-            "No valid configuration could be loaded from {}".format(config_file_path)
-        )
-
-    if CONFIG_KEY not in pash_config:
-        raise Exception(
-            "Missing `{}` config in {}".format(CONFIG_KEY, config_file_path)
-        )
-
-    config = pash_config
-
-
-## Runtime-only mode: pass_common_arguments removed
-## This function was used to pass compiler-specific arguments to subprocesses
-## Not needed in runtime-only mode since there's no compiler daemon
-
-
 def init_log_file():
     global LOG_FILE
     if not LOG_FILE == "":
         with open(LOG_FILE, "w") as f:
             pass
-
-
-##
-## Set the shell variables
-##
-
-
-def set_vars_file(var_file_path: str, var_dict: dict):
-    global config
-    config["shell_variables"] = var_dict
-    config["shell_variables_file_path"] = var_file_path

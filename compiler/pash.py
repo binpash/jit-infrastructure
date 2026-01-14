@@ -4,7 +4,6 @@ import subprocess
 
 # Runtime-only mode: ir.py not needed (only used for compilation)
 # from ir import *
-from pash_graphviz import maybe_init_graphviz_dir
 from preprocessor.preprocessor import preprocess
 # Runtime-only mode: no speculative execution
 # from speculative import util_spec
@@ -77,12 +76,6 @@ def parse_args():
 
     ## Initialize the log file
     config.init_log_file()
-    if not config.config:
-        # Runtime-only mode: use default config path
-        config.load_config()
-
-    ## Initialize the graphviz directory
-    maybe_init_graphviz_dir(args)
 
     ## Print all the arguments before they are modified below
     log("Arguments:")
