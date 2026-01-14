@@ -8,8 +8,6 @@ from parse import from_ast_objects_to_shell
 class AbstractTransformationState(ABC):
     def __init__(self):
         self._node_counter = 0
-        self._loop_counter = 0
-        self._loop_contexts = []
 
     ## Node id related
     def get_next_id(self):
@@ -22,30 +20,6 @@ class AbstractTransformationState(ABC):
 
     def get_number_of_ids(self):
         return self._node_counter
-
-    ## Loop id related
-    def get_next_loop_id(self):
-        new_id = self._loop_counter
-        self._loop_counter += 1
-        return new_id
-
-    def get_current_loop_context(self):
-        ## We want to copy that
-        return self._loop_contexts[:]
-
-    def get_current_loop_id(self):
-        if len(self._loop_contexts) == 0:
-            return None
-        else:
-            return self._loop_contexts[0]
-
-    def enter_loop(self):
-        new_loop_id = self.get_next_loop_id()
-        self._loop_contexts.insert(0, new_loop_id)
-        return new_loop_id
-
-    def exit_loop(self):
-        self._loop_contexts.pop(0)
 
     @abstractmethod
     def replace_df_region(

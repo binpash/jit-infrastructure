@@ -209,57 +209,16 @@ def preprocess_node_for(
     trans_options: AbstractTransformationState,
     last_object: bool = False,
 ):
-    ## If we are in a loop, we push the loop identifier into the loop context
-    loop_id = trans_options.enter_loop()
+    ## Preprocess the loop body
     preprocessed_body, something_replaced = preprocess_close_node(
         ast_node.body, trans_options, last_object=last_object
     )
 
-    ## TODO: Then send this iteration identifier when talking to the spec scheduler
-    ## TODO: After running checks put this behind a check to only run under speculation
-
-    ## Create a new variable that tracks loop iterations
-    var_name = loop_iter_var(loop_id)
-    export_node = make_export_var_constant_string(var_name, "0")
-    increment_node = make_increment_var(var_name)
-
-    ## Also store the whole sequence of loop iters in a file
-    all_loop_ids = trans_options.get_current_loop_context()
-
-    ## export pash_loop_iters="$pash_loop_XXX_iter $pash_loop_YYY_iter ..."
-    save_loop_iters_node = export_pash_loop_iters_for_current_context(all_loop_ids)
-
-    ## Prepend the increment in the body
-    ast_node.body = make_typed_semi_sequence(
-        [
-            to_ast_node(increment_node),
-            to_ast_node(save_loop_iters_node),
-            copy.deepcopy(preprocessed_body),
-        ]
-    )
-
-    ## We pop the loop identifier from the loop context.
-    ##
-    ## KK 2023-04-27: Could this exit happen before the replacement leading to wrong
-    ##     results? I think not because we use the _close_node preprocessing variant.
-    ##     A similar issue might happen for while
-    trans_options.exit_loop()
-
-    ## reset the loop iters after we exit the loop
-    out_of_loop_loop_ids = trans_options.get_current_loop_context()
-    reset_loop_iters_node = export_pash_loop_iters_for_current_context(
-        out_of_loop_loop_ids
-    )
-
-    ## Prepend the export in front of the loop
-    # new_node = ast_node
-    new_node = make_typed_semi_sequence(
-        [to_ast_node(export_node), ast_node, to_ast_node(reset_loop_iters_node)]
-    )
-    # print(new_node)
+    ## Update the loop body with the preprocessed version
+    ast_node.body = copy.deepcopy(preprocessed_body)
 
     preprocessed_ast_object = PreprocessedAST(
-        new_node,
+        ast_node,
         replace_whole=False,
         non_maximal=False,
         something_replaced=something_replaced,
@@ -274,9 +233,6 @@ def preprocess_node_while(
     trans_options: AbstractTransformationState,
     last_object: bool = False,
 ):
-    ## If we are in a loop, we push the loop identifier into the loop context
-    trans_options.enter_loop()
-
     preprocessed_test, sth_replaced_test = preprocess_close_node(
         ast_node.test, trans_options, last_object=last_object
     )
@@ -294,8 +250,6 @@ def preprocess_node_while(
         last_ast=last_object,
     )
 
-    ## We pop the loop identifier from the loop context.
-    trans_options.exit_loop()
     return preprocessed_ast_object
 
 
