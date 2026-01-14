@@ -120,30 +120,6 @@ class RunnerParser(BaseParser):
         self.set_defaults(preprocess_mode="pash")
 
 
-class CompilerParser(BaseParser):
-    """
-    Parser for the PaSh compiler in compiler/pash_compiler.py
-    """
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.add_pash_args()
-
-        self.add_argument(
-            "compiled_script_file",
-            help="the file in which to output the compiled script",
-        )
-        self.add_argument(
-            "input_ir",
-            help="the file containing the dataflow graph to be optimized and executed",
-        )
-        self.add_argument(
-            "--var_file",
-            help="determines the path of a file containing all shell variables.",
-            default=None,
-        )
-
-
 class PreprocessorParser(BaseParser):
     """
     Parser for the preprocessor in compiler/preprocessor/preprocessor.py

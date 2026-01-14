@@ -1,4 +1,9 @@
-from env_var_names import *
+# Runtime-only mode: inline loop variable name functions
+def loop_iters_var() -> str:
+    return "pash_loop_iters"
+
+def loop_iter_var(loop_id: int) -> str:
+    return f"pash_loop_{loop_id}_iter"
 from shasta.ast_node import *
 from shasta.json_to_ast import *
 from util import *
