@@ -1,64 +1,278 @@
-0.086
-0.071
-0.083
-0.070
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
 0.075
-0.086
-0.080
-0.082
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 1: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 5: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 17: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 21: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 25: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 29: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 33: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpv3c6vqc_: line 36: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmp52v1848x: line 1: /dev/null/abc: Not a directory
-/tmp/pash_EjQ7zNQ/tmpxam41z5o: line 1: name_of_a_command_that_will_not_be_found: command not found
-0.509
-sh: 11: Syntax error: Missing '))'
-0.098
-0.091
-0.089
-/tmp/pash_lN3fv7p/tmpxzcg_od0: line 4: var1: readonly variable
-/tmp/pash_lN3fv7p/tmpxzcg_od0: line 6: var2: readonly variable
-/tmp/pash_lN3fv7p/tmpgz2sd894: line 1: unset: var1: cannot unset: readonly variable
-/tmp/pash_lN3fv7p/tmpxd11tf8u: line 1: unset: var2: cannot unset: readonly variable
-0.130
-/tmp/pash_d8Cep4a/tmpmz57ccsd: line 4: var1: readonly variable
-/tmp/pash_d8Cep4a/tmpmz57ccsd: line 6: var2: readonly variable
-/tmp/pash_d8Cep4a/tmpcrkv58kn: line 1: unset: var1: cannot unset: readonly variable
-/tmp/pash_d8Cep4a/tmpk6160vo1: line 1: unset: var2: cannot unset: readonly variable
-0.109
-0.096
-0.086
-0.104
-0.101
-0.243
-0.177
-0.181
-0.119
-0.282
-0.113
-0.107
-0.120
-0.147
-0.095
-0.128
-0.115
-/tmp/pash_Wzyskf0/tmp9df_6v9w: line 1: no.such.file: No such file or directory
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.042
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.041
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.047
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.049
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.050
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.055
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.055
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.063
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
 0.097
-0.100
-/tmp/pash_01eErvn/tmpe6qurq3u: line 1: foobar: unbound variable
-0.116
-/tmp/pash_GDvzOfo/tmpoigohb04: line 1: $1: unbound variable
-0.127
-0.102
-0.133
-0.095
-0.091
-0.158
-0.097
-0.108
-0.115
+0.050
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.043
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.047
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.066
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.050
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.049
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.049
+0.049
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.048
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.044
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.043
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.049
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.043
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.053
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.048
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.048
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.051
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.055
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.048
+0.072
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.043
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.075
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.051
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.048
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.050
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.051
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.047
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.057
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.051
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+diff: tmp1.txt: No such file or directory
+diff: tmp2.txt: No such file or directory
+0.055
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.054
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.045

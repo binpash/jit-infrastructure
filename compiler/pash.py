@@ -75,15 +75,11 @@ def parse_args():
     args = parser.parse_args()
     config.set_config_globals_from_pash_args(args)
 
-    ## Runtime-only mode: speculative execution not supported
-    if args.speculative:
-        log("ERROR: Speculative mode not supported in runtime-only version!", level=0)
-        sys.exit(1)
-
     ## Initialize the log file
     config.init_log_file()
     if not config.config:
-        config.load_config(args.config_path)
+        # Runtime-only mode: use default config path
+        config.load_config()
 
     ## Initialize the graphviz directory
     maybe_init_graphviz_dir(args)

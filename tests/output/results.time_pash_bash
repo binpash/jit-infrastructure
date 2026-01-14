@@ -1,53 +1,36 @@
-0.073
-0.083
-0.073
-0.066
-0.074
-0.083
-0.088
-0.110
-incomplete-arith.sh: line 3: unexpected EOF while looking for matching `)'
-0.070
-0.088
-0.094
-/tmp/pash_mVi1U7V/tmpptukb52n: line 4: var1: readonly variable
-/tmp/pash_mVi1U7V/tmpptukb52n: line 6: var2: readonly variable
-/tmp/pash_mVi1U7V/tmpw0uiiqrt: line 1: unset: var1: cannot unset: readonly variable
-/tmp/pash_mVi1U7V/tmpx6b_mn1q: line 1: unset: var2: cannot unset: readonly variable
-0.111
-/tmp/pash_ZvGAvCr/tmpnug2bipz: line 4: var1: readonly variable
-/tmp/pash_ZvGAvCr/tmpnug2bipz: line 6: var2: readonly variable
-/tmp/pash_ZvGAvCr/tmpdcwa6mg0: line 1: unset: var1: cannot unset: readonly variable
-/tmp/pash_ZvGAvCr/tmpukzio4jl: line 1: unset: var2: cannot unset: readonly variable
-0.121
-0.103
-0.091
-0.116
-0.103
-0.254
-0.175
-0.237
-0.108
-0.260
-0.118
-0.106
-0.117
-0.120
-0.096
-0.116
-0.114
-/tmp/pash_lDZuLPb/tmp5minrj_e: line 1: no.such.file: No such file or directory
-0.100
-0.105
-/tmp/pash_jDIEJgu/tmpbhm4jvku: line 1: foobar: unbound variable
-0.117
-/tmp/pash_TSLOYfR/tmpazqdrc5k: line 1: $1: unbound variable
-0.125
-0.102
-0.122
-0.099
-0.088
-0.156
-0.097
-0.105
-0.128
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.046
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.046
+0.055
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.064
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.044
+usage: pa.sh [-h] [-t] [-d DEBUG] [--log_file LOG_FILE] [--version]
+             [--preprocess_only] [--output_preprocessed]
+             [--local-annotations-dir LOCAL_ANNOTATIONS_DIR] [--interactive]
+             [-c COMMAND] [-a] [+a] [-v] [-x] [--bash]
+             [input ...]
+pa.sh: error: unrecognized arguments: --profile_driven
+0.048
