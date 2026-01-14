@@ -11,9 +11,9 @@ regions. The pass serializes all candidate dataflow regions:
 The PaSh runtime then deserializes the(m, compiles them (if safe) and optimizes them.
 """
 
-from shell_ast.ast_util import *
-from shell_ast.preprocess_ast_cases import preprocess_node
-from shell_ast.transformation_options import AbstractTransformationState
+from ast_util import *
+from preprocess_ast_cases import preprocess_node
+from transformation_options import AbstractTransformationState
 
 
 def replace_ast_regions(ast_objects, trans_options: AbstractTransformationState):

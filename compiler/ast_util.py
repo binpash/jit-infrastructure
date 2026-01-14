@@ -1,6 +1,6 @@
 from shasta.ast_node import *
 from shasta.json_to_ast import *
-from util import *
+from config import make_kv
 
 
 ## This class is used by the preprocessor in ast_to_ir
@@ -88,50 +88,3 @@ def make_command(arguments, redirections=None, assignments=None):
 
 def make_nop():
     return make_command([string_to_argument(":")])
-
-
-##
-## Make some nodes
-##
-
-
-def make_export_var_constant_string(var_name: str, value: str):
-    node = make_export_var(var_name, string_to_argument(value))
-    return node
-
-
-def make_export_var(var_name: str, arg_char_list):
-    ## An argument is an arg_char_list
-    arg1 = string_to_argument(f"{var_name}=")
-    arguments = [string_to_argument("export"), concat_arguments(arg1, arg_char_list)]
-    ## Pass all relevant argument to the planner
-    node = make_command(arguments)
-    return node
-
-
-def export_pash_loop_iters_for_current_context(all_loop_ids: "list[int]"):
-    if len(all_loop_ids) > 0:
-        iter_var_names = [loop_iter_var(loop_id) for loop_id in all_loop_ids]
-        iter_vars = [
-            standard_var_ast(iter_var_name) for iter_var_name in iter_var_names
-        ]
-        concatted_vars = [iter_vars[0]]
-        for iter_var in iter_vars[1:]:
-            concatted_vars.append(char_to_arg_char("-"))
-            concatted_vars.append(iter_var)
-        quoted_vars = [quote_arg(concatted_vars)]
-    else:
-        quoted_vars = []
-
-    ## export pash_loop_iters="$pash_loop_XXX_iter $pash_loop_YYY_iter ..."
-    save_loop_iters_node = make_export_var(loop_iters_var(), quoted_vars)
-
-    return save_loop_iters_node
-
-
-def make_increment_var(var_name: str):
-    arg = string_to_argument(f"{var_name}+1")
-    arith_expr = make_arith(arg)
-    assignments = [[var_name, [arith_expr]]]
-    node = make_command([], assignments=assignments)
-    return node

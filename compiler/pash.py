@@ -1,11 +1,14 @@
 import sys
 import os
 import subprocess
+from datetime import datetime
 
-from preprocessor.preprocessor import preprocess
-from util import *
 import config
-from cli import RunnerParser
+from config import log, ptempfile, logging_prefix, print_time_delta
+from cli import RunnerParser, PreprocessorParser
+import transformation_options
+import ast_to_ast
+from parse import parse_shell_to_asts, from_ast_objects_to_shell
 
 LOGGING_PREFIX = "PaSh: "
 
@@ -32,6 +35,49 @@ def main():
         log("-" * 40)  # log end marker
         ## Return the exit code of the executed script
         sys.exit(return_code)
+
+
+def preprocess(input_script_path, args):
+    """Preprocess a shell script by parsing, transforming, and unparsing ASTs"""
+    ## 1. Execute the POSIX shell parser that returns the AST in JSON
+    preprocessing_parsing_start_time = datetime.now()
+    ast_objects = parse_shell_to_asts(input_script_path, bash_mode=args.bash)
+    preprocessing_parsing_end_time = datetime.now()
+    print_time_delta(
+        "Preprocessing -- Parsing",
+        preprocessing_parsing_start_time,
+        preprocessing_parsing_end_time,
+    )
+
+    ## 2. Preprocess ASTs by replacing possible candidates for compilation
+    ##    with calls to the PaSh runtime.
+    preprocessing_pash_start_time = datetime.now()
+    preprocessed_asts = preprocess_asts(ast_objects, args)
+    preprocessing_pash_end_time = datetime.now()
+    print_time_delta(
+        "Preprocessing -- PaSh",
+        preprocessing_pash_start_time,
+        preprocessing_pash_end_time,
+    )
+
+    ## 3. Translate the new AST back to shell syntax
+    preprocessing_unparsing_start_time = datetime.now()
+    preprocessed_shell_script = from_ast_objects_to_shell(preprocessed_asts)
+
+    preprocessing_unparsing_end_time = datetime.now()
+    print_time_delta(
+        "Preprocessing -- Unparsing",
+        preprocessing_unparsing_start_time,
+        preprocessing_unparsing_end_time,
+    )
+    return preprocessed_shell_script
+
+
+def preprocess_asts(ast_objects, args):
+    """Transform AST objects by replacing regions with JIT runtime calls"""
+    trans_options = transformation_options.TransformationState()
+    preprocessed_asts = ast_to_ast.replace_ast_regions(ast_objects, trans_options)
+    return preprocessed_asts
 
 
 def preprocess_and_execute_asts(
